@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail # We must be very strict about this script. 
+set -euo pipefail # We must be very strict about this script.
 
 echo "Gen2Update by livingSatire!"
 
@@ -19,7 +19,7 @@ echo "Updating Gentoo"
 emerge --ask --verbose --update --deep --newuse --with-bdeps=y --backtrack=30 @world
 
 echo "Updating Flatpak"
-flatpak update --system -y 
+flatpak update --system -y
 
 echo "Cleaning Up Flatpak"
 flatpak uninstall --unused
@@ -32,4 +32,4 @@ emerge @preserved-rebuild
 echo "Done updating"
 fastfetch || true # Shows the update is done
 sleep 20
-cmatrix -bsr # Screen Saver, due to user being away from computer
+cmatrix -bsr || true # Screen Saver, due to user being away from computer
