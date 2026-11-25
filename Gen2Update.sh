@@ -16,7 +16,7 @@ echo "Syncing Gentoo Repos"
 emaint -a sync
 
 echo "Updating Gentoo"
-emerge --ask --verbose --update --deep --newuse --with-bdeps=y --backtrack=30 @world
+emerge --ask --verbose --update --deep --changed-use --with-bdeps=y --backtrack=30 @world
 
 echo "Updating Flatpak"
 flatpak update --system -y
